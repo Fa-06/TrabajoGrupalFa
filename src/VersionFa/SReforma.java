@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class SReforma extends Servicio implements GastosMaterial{
     private ArrayList<String> materiales = new ArrayList<>();
+    private int MaterialGastadoP;
 
     public SReforma(String nCliente, int obrasH, int desplazamientoH, Date fInicio, String detalle, ArrayList<String> materiales) {
         super(nCliente, obrasH, desplazamientoH, fInicio, detalle);
@@ -24,7 +25,7 @@ public class SReforma extends Servicio implements GastosMaterial{
 
     /*Implementar gastar material*/
     public int gastarMaterial(){
-        return 0;
+        return MaterialGastadoP;
     }
 
 
