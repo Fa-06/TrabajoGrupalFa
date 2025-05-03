@@ -7,19 +7,9 @@ public class Servicio {
     protected String nCliente;
     protected int obrasH;
     protected int desplazamientoH;
-    protected int presupuestadoH;
-    protected int prespuestadoTotal;
     protected Date fInicio;
     protected String detalle;
-
-    public Servicio(String nCliente, int obrasH, int desplazamientoH, int presupuestadoH, Date fInicio, String detalle) {
-        this.nCliente = nCliente;
-        this.obrasH = obrasH;
-        this.desplazamientoH = desplazamientoH;
-        this.presupuestadoH = presupuestadoH;
-        this.fInicio = fInicio;
-        this.detalle = detalle;
-    }
+    protected int prespuestado;
 
     public Servicio(String nCliente, int obrasH, int desplazamientoH, Date fInicio, String detalle) {
         this.nCliente = nCliente;
@@ -27,10 +17,11 @@ public class Servicio {
         this.desplazamientoH = desplazamientoH;
         this.fInicio = fInicio;
         this.detalle = detalle;
+        prespuestado = gastarManoObraDesplazamiento();
     }
 
     public Servicio() {
-        this(null, 0, 0, 0, null, null);
+        this(null, 0, 0, null, null);
     }
 
     public String getnCliente() {
@@ -73,31 +64,28 @@ public class Servicio {
         this.detalle = detalle;
     }
 
-    public int getPrespuestadoTotal() {
-        return prespuestadoTotal;
+    public int getPrespuestado() {
+        return prespuestado;
     }
 
-    public void setPrespuestadoTotal(int prespuestadoTotal) {
-        this.prespuestadoTotal = prespuestadoTotal;
-    }
-
-    public int getPresupuestadoH() {
-        return presupuestadoH;
-    }
-
-    public void setPresupuestadoH(int presupuestadoH) {
-        this.presupuestadoH = presupuestadoH;
+    public void setPrespuestado(int prespuestado) {
+        this.prespuestado = prespuestado;
     }
 
     //Este metodo calcula para todos los ejercicios la cantidad de horas trabajadas y de desplazamiento pero no el total, este ulitmo dependera de cada servicio//
-    public void gastarManoObraDesplazamiento(){
-        presupuestadoH = (obrasH * HPRECIOOBRA) + (desplazamientoH * HPRECIODESPLAZAMIENTO);
+    public int gastarManoObraDesplazamiento(){
+        return (obrasH * HPRECIOOBRA) + (desplazamientoH * HPRECIODESPLAZAMIENTO);
     }
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Servicio{" +
+                "nCliente='" + nCliente + '\'' +
+                ", obrasH=" + obrasH +
+                ", desplazamientoH=" + desplazamientoH +
+                ", fInicio=" + fInicio +
+                ", detalle='" + detalle + '\'' +
+                ", prespuestado=" + prespuestado +
+                '}';
+    }
 }
