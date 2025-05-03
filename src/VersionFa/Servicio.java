@@ -77,6 +77,10 @@ public class Servicio {
         return (obrasH * HPRECIOOBRA) + (desplazamientoH * HPRECIODESPLAZAMIENTO);
     }
 
+    public void calcularTotalCliente(){
+        prespuestado =+ prespuestado;
+    }
+
     @Override
     public String toString() {
         return "Servicio{" +
