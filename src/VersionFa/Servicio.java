@@ -1,18 +1,16 @@
 package VersionFa;
 import java.util.Date;
 
-public class Servicio {
+public abstract class Servicio {
     public static final int HPRECIOOBRA = 60;
     public static final int HPRECIODESPLAZAMIENTO = 20;
-    protected String nCliente;
     protected int obrasH;
     protected int desplazamientoH;
     protected Date fInicio;
     protected String detalle;
     protected int prespuestado;
 
-    public Servicio(String nCliente, int obrasH, int desplazamientoH, Date fInicio, String detalle) {
-        this.nCliente = nCliente;
+    public Servicio( int obrasH, int desplazamientoH, Date fInicio, String detalle) {
         this.obrasH = obrasH;
         this.desplazamientoH = desplazamientoH;
         this.fInicio = fInicio;
@@ -21,15 +19,7 @@ public class Servicio {
     }
 
     public Servicio() {
-        this(null, 0, 0, null, null);
-    }
-
-    public String getnCliente() {
-        return nCliente;
-    }
-
-    public void setnCliente(String nCliente) {
-        this.nCliente = nCliente;
+        this(0, 0, null, null);
     }
 
     public int getObrasH() {
@@ -84,7 +74,6 @@ public class Servicio {
     @Override
     public String toString() {
         return "Servicio{" +
-                "nCliente='" + nCliente + '\'' +
                 ", obrasH=" + obrasH +
                 ", desplazamientoH=" + desplazamientoH +
                 ", fInicio=" + fInicio +

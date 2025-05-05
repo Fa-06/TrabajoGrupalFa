@@ -6,13 +6,13 @@ public class SReforma extends Servicio implements GastosMaterial{
     private ArrayList<String> materiales = new ArrayList<>();
     private int MaterialGastadoP;
 
-    public SReforma(String nCliente, int obrasH, int desplazamientoH, Date fInicio, String detalle, ArrayList<String> materiales) {
-        super(nCliente, obrasH, desplazamientoH, fInicio, detalle);
+    public SReforma(int obrasH, int desplazamientoH, Date fInicio, String detalle, ArrayList<String> materiales) {
+        super( obrasH, desplazamientoH, fInicio, detalle);
         this.materiales = materiales;
     }
 
     public SReforma() {
-        this(null, 0, 0, null, null,null);
+        this(0, 0, null, null,null);
     }
 
     public ArrayList<String> getMateriales() {
