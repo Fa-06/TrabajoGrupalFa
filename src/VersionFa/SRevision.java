@@ -14,6 +14,11 @@ public class SRevision extends Servicio{
         this(0, 0, null, null,null);
     }
 
+    @Override
+    public void calcularTotalCliente() {
+
+    }
+
     public String getRevision() {
         return revision;
     }
