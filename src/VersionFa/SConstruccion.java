@@ -13,6 +13,12 @@ public class SConstruccion extends Servicio implements GastosMaterial {
         this(0, 0, null, null,0);
     }
 
+    @Override
+    public double calcularTotalCliente() {
+
+        return 0;
+    }
+
     public int gastarMaterial(){
         return 0;
     }
