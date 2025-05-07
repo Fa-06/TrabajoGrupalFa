@@ -8,7 +8,7 @@ public abstract class Servicio {
     protected int desplazamientoH;
     protected Date fInicio;
     protected String detalle;
-    protected int prespuestado;
+    protected double prespuestado;
 
     public Servicio( int obrasH, int desplazamientoH, Date fInicio, String detalle) {
         this.obrasH = obrasH;
@@ -54,20 +54,20 @@ public abstract class Servicio {
         this.detalle = detalle;
     }
 
-    public int getPrespuestado() {
+    public double getPrespuestado() {
         return prespuestado;
     }
 
-    public void setPrespuestado(int prespuestado) {
+    public void setPrespuestado(double prespuestado) {
         this.prespuestado = prespuestado;
     }
 
     //Este metodo calcula para todos los ejercicios la cantidad de horas trabajadas y de desplazamiento pero no el total, este ulitmo dependera de cada servicio//
-    public int gastarManoObraDesplazamiento(){
+    public double gastarManoObraDesplazamiento(){
         return (obrasH * HPRECIOOBRA) + (desplazamientoH * HPRECIODESPLAZAMIENTO);
     }
 
-    public abstract void  calcularTotalCliente();
+    public abstract double calcularTotalCliente();
 
     @Override
     public String toString() {

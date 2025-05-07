@@ -14,8 +14,9 @@ public class SConstruccion extends Servicio implements GastosMaterial {
     }
 
     @Override
-    public void calcularTotalCliente() {
+    public double calcularTotalCliente() {
 
+        return 0;
     }
 
     public int gastarMaterial(){

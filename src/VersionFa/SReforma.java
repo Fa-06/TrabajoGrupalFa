@@ -16,8 +16,9 @@ public class SReforma extends Servicio implements GastosMaterial{
     }
 
     @Override
-    public void calcularTotalCliente() {
+    public double calcularTotalCliente() {
 
+        return 0;
     }
 
     public ArrayList<String> getMateriales() {
