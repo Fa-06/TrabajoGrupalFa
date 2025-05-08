@@ -1,4 +1,4 @@
-package VersionFa;
+package PelaFa;
 import java.util.Date;
 
 public abstract class Servicio {
@@ -10,7 +10,7 @@ public abstract class Servicio {
     protected String detalle;
     protected double prespuestado;
 
-    public Servicio( int obrasH, int desplazamientoH, Date fInicio, String detalle) {
+    public Servicio(int obrasH, int desplazamientoH, Date fInicio, String detalle) {
         this.obrasH = obrasH;
         this.desplazamientoH = desplazamientoH;
         this.fInicio = fInicio;

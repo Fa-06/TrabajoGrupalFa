@@ -1,7 +1,8 @@
-package VersionFa;
+package PelaFa;
 import java.util.*;
-import java.time.*;
+
 public class Principal {
+    public static Scanner sc = new Scanner(System.in);
     public Principal(){
     }
 
