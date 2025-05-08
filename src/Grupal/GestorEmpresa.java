@@ -8,6 +8,7 @@ import java.util.InputMismatchException;
 
 
 public class GestorEmpresa {
+    //constantes
     public static final int NCLIENTES = 4;
     public static final int GDETALLLE = 90;
 
