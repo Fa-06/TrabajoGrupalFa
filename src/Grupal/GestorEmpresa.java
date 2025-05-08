@@ -97,10 +97,7 @@ public class GestorEmpresa {
                     hValida = true;
                 } catch (InputMismatchException e) {
                     System.out.println("Error al leer el número de horas.");
-                    System.out.print("Ingrese número de horas de las obras: ");
-                    hObras = Principal.sc.nextInt();
-                    System.out.println("Ingresa las horas de desplazamiento de la obra: ");
-                    hDesplazamiento = Principal.sc.nextInt();
+                    Principal.sc.next();
                 }
             }
 
@@ -120,9 +117,10 @@ public class GestorEmpresa {
                     fechaValida = true;
                 } catch (Exception e) {
                     System.out.println("Error al leer la fecha.");
+                    Principal.sc.next();
                 }
             }
-
+            indexS++;
             System.out.print("Ingrese tipo de servicio (reforma, revision, construccion): ");
             Principal.sc.nextLine(); //Limpiar Buffer de Memoria
             String tipo = Principal.sc.next().toLowerCase();
@@ -153,13 +151,12 @@ public class GestorEmpresa {
     }
 
     public void gestionarDetallesServicio() {
-        if (indexS == 0){
+        if (indexS == 0) {
             System.out.println("No hay servicios ingresados");
-        }else{
-            for (int i = 0; i < indexS; i++) {
-                if (servicios[i].getPrespuestado() > GDETALLLE) {
-                    System.out.println("Ingresa los detalles del servicio");
-                    detalles[i] = Principal.sc.next();
+        } else {
+            for (int i = 0; i < servicios.length; i++) {
+                if (servicios[i] != null && servicios[i].getPrespuestado() > GDETALLLE) {
+                    detalles[i] = servicios[i].crearDetallesServicio();
                 }
             }
         }
@@ -170,7 +167,9 @@ public class GestorEmpresa {
             System.out.println("No hay servicios ingresados");
         }else{
             for (String det : detalles) {
-                System.out.println(det);
+                if (det != null){
+                    System.out.println(det);
+                }
             }
         }
     }
